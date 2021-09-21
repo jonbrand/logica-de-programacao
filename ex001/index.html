@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Calculadora de salário por hora</h1>
+
+  <form action="">
+    <label>Salário mensal</label>
+    <input required type="number" id="salary">
+
+    <label>Horas Trabalhadas no mês</label>
+    <input required type="number" id="hours">
+
+    <input type="button" onclick="javascript:hourWorkedPerMounth();" value="Calcular">
+
+    <h2>Resultado</h2>
+    <input id="result" readonly>
+  </form>
+</body>
+<script defer src="main.js"></script>
+</html>
