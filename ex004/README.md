@@ -1,5 +1,5 @@
 # Fatorial de um número
-## Crie um programa que receba um número e imprima o fato de um número.
+## Crie um programa que receba um número e imprima o fatorial de um número.
 
 ### 1. Quais dados de entrada são necessários?
 R: Input do usuario com um número;

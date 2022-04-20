@@ -1,25 +1,24 @@
-const calculate = document.getElementById('button');
+let form = document.getElementById('display');
+let inputValue = document.getElementById('number');
+console.log(form)
+console.log(inputValue)
 
-function getFactorialNumber (e){
+form.addEventListener('submit', function(e){
   e.preventDefault();
-  const numb = document.querySelector('#display').addEventListener('submit', getFactorialNumber);
-  /* Number.isInteger(numb); */
+  let numb = Number(number.value);
   let factorial = 1;
 
-  for (let i = numb; i > 0; i--){
+  for (let i = numb; i > 0; i--) {
     factorial *= i
   }
 
   if (numb < 0) {
-    alert('Numero negativo nao e valido')
+    alert('Número negativo não e válido')
   }
 
-  if (numb > 0) {
+  if(numb > 0) {
     document.querySelector('#result').value = factorial;
   }
 
   console.log(factorial)
-  /* alert(arr) */
-}
-
-getFactorialNumber();
+});
