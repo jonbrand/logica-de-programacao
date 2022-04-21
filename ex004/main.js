@@ -1,7 +1,5 @@
 let form = document.getElementById('display');
 let inputValue = document.getElementById('number');
-console.log(form)
-console.log(inputValue)
 
 form.addEventListener('submit', function(e){
   e.preventDefault();
@@ -19,6 +17,4 @@ form.addEventListener('submit', function(e){
   if(numb > 0) {
     document.querySelector('#result').value = factorial;
   }
-
-  console.log(factorial)
 });

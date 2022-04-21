@@ -1,46 +1,37 @@
-/*  Escreva um programa que, ao iniciar gera um valor aleatorio de 1 a 10 e
-    permite que o usuario chute um numero ate que o valor aleatorio gerado
-    no inicio do programa seja chutado corretamente.
-
-    O programa deve informar se o chute foi acima, abaixo ou igual ao valor
-    aleatorio gerado no inicio do programa. 
-    
-    PASSOS:
-    1 - [x] Criar interface do usuario;
-    2 - [x] Formula que gera numeros aleatorios de 0 a 10;
-    3 - [x] Armazenar numero aleatorio;
-    4 - [] Pegar o chute do usuario;
-    2 - Criar input do usuario para chutar o numero de 1 a 10;
-    3 - Retorno do programa se o chute foi certo, acima ou abaixo do valor.
-    */
-
-const generatedNumber = parseInt(randomNumber(0, 10));
+let form = document.getElementById('display');
+let inputShot = document.getElementById('shot');
+let min = 0;
+let max = 10;
+let generatedNumber = randomNumber(min, max);
 
 // gera um numero aleatorio
-function randomNumber (min, max) {
+function randomNumber () {
   // Maior ou igual a X
   min = Math.ceil(min);
   // Menor numero referente a X
   max = Math.floor(max);
 
-  return Math.random() * (max - min) - min;
+  let result =  parseInt(Math.random() * (max - min) - min);
+
+  return result;
 }
 
-const shot = document.getElementById('shot').value;
-
-const result = document.getElementById('result').innerText;
-
-function shotResult (shot, randomNumber) {
-  if (shot < randomNumber) {
-    result+= <strong>'Chute muito baixo, tente outra vez!'</strong>
-  } else if (shot > randomNumber) {
-    result.innerHTML+= <strong>'Chute muito alto, tente outra vez!'</strong>;
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  let shot = Number(inputShot.value);
+  
+  if (shot < min) {
+    console.log(min)
+    alert('Número negativo não e válido')
+  } else if (shot > max) {
+    alert('Número invalido')
   } else {
-    result.innerHTML+= <strong>'Correto!'</strong>
-  };
-};
-    
-
-    
-
-    
+    if (shot < generatedNumber){
+      document.querySelector('#result').value = `${'O número '+ shot + ' é muito baixo!'}`;
+    } else if (shot > generatedNumber) {
+      document.querySelector('#result').value = `${'O número '+ shot + ' é muito alto!'}`;
+    } else {
+      document.querySelector('#result').value = `${'É o Número '+ shot + ', acertou!'}`;
+    }
+  }
+})
