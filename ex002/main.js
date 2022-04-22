@@ -21,7 +21,6 @@ form.addEventListener('submit', function(e){
   let shot = Number(inputShot.value);
   
   if (shot < min) {
-    console.log(min)
     alert('Número negativo não e válido')
   } else if (shot > max) {
     alert('Número invalido')
